@@ -1,1 +1,10 @@
-already have so dont need for now
+ipykernel
+numpy
+requests
+Pandas
+matplotlib
+seaborn
+bs4
+flask
+streamlit
+scikit-learn
