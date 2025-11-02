@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Algerian Forest Fire FWI Predictor</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f6fb;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      form {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+      }
+      label {
+        display: block;
+        margin-top: 10px;
+      }
+      input {
+        width: 100%;
+        padding: 6px;
+        margin-top: 4px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+      }
+      button {
+        margin-top: 15px;
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+      .result {
+        margin-top: 15px;
+        text-align: center;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="fireForm" action="{{url_for('predict_datapoint')}}" method="post">
+      <h3>FWI Predictor</h3>
+      <label
+        >Temperature <input name="Temperature" required
+      /></label>
+      <label>RH <input type="number" name="RH" required /></label>
+      <label>Ws <input type="number" name="Ws" required /></label>
+      <label>Rain <input type="number" name="Rain" required /></label>
+      <label>FFMC <input type="number" name="FFMC" required /></label>
+      <label>DMC <input type="number" name="DMC" required /></label>
+      <!-- <label>DC <input type="number" name="DC" required /></label> -->
+      <label>ISI <input type="number" name="ISI" required /></label>
+      <!-- <label>BUI <input type="number" name="BUI" required /></label> -->
+      <label>Classes <input type="number" name="Classes" required /></label>
+      <label>Region <input type="number" name="Region" required /></label>
+
+      <button type="submit">Predict FWI</button>
+    </form>
+    <div class="result" id="result">FWI Result: --{{results}}</div>
+  </body>
+</html>
